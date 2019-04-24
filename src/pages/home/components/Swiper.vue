@@ -15,9 +15,9 @@ export default {
   data () {
     return {
       swiperOption: {
-      	pagination: '.swiper-pagination',
-      	loop: true
-      }, 
+        pagination: '.swiper-pagination',
+        loop: true
+      },
       swiperList: [{
         id: '0001',
         imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/389d0194766566f8f1185aa19b759c25.jpg_750x200_22620261.jpg'
