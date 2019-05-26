@@ -58,7 +58,7 @@ export default {
           if (index >= 0 && index < this.letters.length) {
             this.$emit('change', this.letters[index])
           }
-        }, 10) // 函数节流：延迟16ms执行，若16ms内又有行为，则清空上次的行为执行这次的，提升代码性能
+        }, 16) // 函数节流：延迟16ms执行，若16ms内又有行为，则清空上次的行为执行这次的，提升代码性能
       }
     },
     handleTouchEnd () {
