@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">北京</div>
+            <div class="button">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
@@ -16,6 +16,7 @@
             class="button-wrapper"
             v-for="item of hot"
             :key="item.id"
+            @click="handleCityClick(item.name)"
           >
             <div class="button">{{item.name}}</div>
           </div>
@@ -33,6 +34,8 @@
             class="item border-bottom"
             v-for="innerItem of item"
             :key="innerItem.id"
+            @click="handleCityClick(innerItem.name)"
+
           >
             {{innerItem.name}}
           </div>
@@ -44,6 +47,7 @@
 
 <script>
 import Bscroll from 'better-scroll'// 页面滚动插件better-scroll，是iscroll的封装
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -51,8 +55,18 @@ export default {
     cities: Object,
     letter: String
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+  computed: {
+    ...mapState({
+      currentCity: 'city' // 把vuex里公用数据的city映射到这个组件computed的计算属性里，映射过来的名字叫currentCity
+    })
+  },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.commit('changeCity', city) 点击时action会被派发  通过**可以改写成下面这行
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity']) // **把这个叫changeCity的mutation，映射到叫changeCity的方法里
   },
   watch: {
     letter () {
@@ -61,6 +75,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>
