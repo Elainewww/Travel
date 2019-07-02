@@ -12,10 +12,10 @@ export default new Vuex.Store({
   //     ctx.commit('changeCity', city) // 组件调用action，action调用mutation，mutation去改变数据
   //   }
   // },
-  mutations,
-  getters: {
-    doubleCity (state) {
-      return state.city + ' ' + state.city // 借助state里的数据算出新的数据时，皆准getters避免数据冗余
-    }
-  }
+  mutations
+  // getters: {
+  //   doubleCity (state) {
+  //     return state.city + ' ' + state.city // 借助state里的数据算出新的数据时，皆准getters避免数据冗余
+  //   }
+  // }
 })
