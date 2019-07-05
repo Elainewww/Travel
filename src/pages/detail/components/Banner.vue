@@ -2,10 +2,9 @@
   <div>
     <div class="banner" @click="handleBannerClick">
       <img class="banner-img" :src="bannerImg" />
-      <div class="banner-info">
 <!-- src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" /> -->
       <div class="banner-info">
-        <div class="banner-tile">
+        <div class="banner-title">
           {{this.sightName}}
         </div>
         <div class="banner-number">
@@ -14,17 +13,19 @@
         </div>
       </div>
     </div>
-    <common-gallery
-      :imgs="bannerImgs"
-      v-show="showGallery"
-      @close="handleGalleryClose"
-    ></common-gallery>
-    </div>
+    <fade-animation>
+      <common-gallery
+        :imgs="bannerImgs"
+        v-if="showGallery"
+        @close="handleGalleryClose"
+      ></common-gallery>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'DetailBanner',
   props: {
@@ -47,7 +48,8 @@ export default {
     }
   },
   components: {
-    CommonGallery
+    CommonGallery,
+    FadeAnimation
   }
 }
 </script>
@@ -69,7 +71,7 @@ export default {
       line-height: .6rem
       color: #fff
       background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .8)) // 渐变色
-      .banner-tile
+      .banner-title
         flex: 1
         font-size: .32rem
         padding: 0 .2rem
