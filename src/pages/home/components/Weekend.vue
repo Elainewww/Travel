@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="title">周末去哪儿</div>
+    <div class="title">
+      <img class="title-img" src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png" alt="周末去哪儿">
+      周末去哪儿
+    </div>
     <ul>
       <li
         class="item border-bottom"
@@ -34,6 +37,13 @@ export default {
     line-height: .8rem
     background: #eee
     text-indent: .2rem
+    font-size: .32rem
+    .title-img
+      display: inline-block
+      overflow: hidden
+      width: .3rem
+      height: .3rem
+      margin-left: .05rem
   .item-img-wrapper
     overflow: hidden
     height: 0

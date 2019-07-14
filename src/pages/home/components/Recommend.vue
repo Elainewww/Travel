@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="title">热销推荐</div>
+    <div class="title">
+      <img class="title-img" src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="猜你喜欢">
+      猜你喜欢
+    </div>
     <ul>
       <router-link
         tag="li"
@@ -36,6 +39,13 @@ export default {
     line-height: .8rem
     background: #eee
     text-indent: .2rem
+    font-size: .32rem
+    .title-img
+      display: inline-block
+      overflow: hidden
+      width: .3rem
+      height: .3rem
+      margin-left: .05rem
   .item
     overflow: hidden
     display: flex
@@ -58,7 +68,7 @@ export default {
         ellipsis()
       .item-button
         line-height: .44rem
-        marigin-top: .16rem
+        margin-top: .2rem
         background: #ff9300
         padding: 0 .2rem
         border-radius: .06rem

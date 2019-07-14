@@ -2,7 +2,6 @@
   <div>
     <div class="banner" @click="handleBannerClick">
       <img class="banner-img" :src="bannerImg" />
-<!-- src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" /> -->
       <div class="banner-info">
         <div class="banner-title">
           {{this.sightName}}
@@ -36,7 +35,6 @@ export default {
   data () {
     return {
       showGallery: false
-      // imgs: ['http://img1.qunarzz.com/sight/p0/1811/cc/cce6ce13449cbdeea3.water.jpg_r_800x800_1bfb2fe9.jpg', 'http://img1.qunarzz.com/sight/p0/1811/be/bed07cf557c93933a3.water.jpg_r_800x800_ba07dded.jpg']
     }
   },
   methods: {
